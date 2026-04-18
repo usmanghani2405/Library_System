@@ -22,6 +22,7 @@ RUN chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html
 # Enable rewrite and fix the port for Railway
 RUN a2enmod rewrite
 RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
-
+# Enable Output Buffering to prevent 'Headers already sent' errors
+RUN echo "output_buffering = On" >> /usr/local/etc/php/conf.d/docker-php-config.ini
 # MPM fix from earlier
 CMD ["sh", "-c", "a2dismod mpm_event && apache2-foreground"]
