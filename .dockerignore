@@ -1,0 +1,25 @@
+# filepath: .dockerignore
+# Git
+.git
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+
+# DDEV
+.ddev/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Vendor (if using Composer, include it; otherwise exclude)
+# vendor/
